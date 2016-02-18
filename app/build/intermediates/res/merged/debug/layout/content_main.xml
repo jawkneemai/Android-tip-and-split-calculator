@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -25,17 +25,18 @@
             android:textSize="16dp" />
 
         <EditText
-            android:id="@+id/textBillAmount"
+            android:id="@+id/editTextBillAmount"
             android:layout_width="50px"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:layout_weight="0.33" />
+            android:layout_weight="0.33"
+            android:hint="0.00" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -45,21 +46,30 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/textPercentTip"
+            android:id="@+id/textViewTipPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_percent"
             android:textSize="16dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/percent_sign"
+            android:textSize="16dp" />
+
         <SeekBar
+            android:id="@+id/seekBarTipPercent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:progress="15"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -69,7 +79,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/textTipAmount"
+            android:id="@+id/textViewTipTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_money"
@@ -79,7 +89,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -89,7 +99,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/totalAmount"
+            android:id="@+id/textViewBillTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_money"
@@ -104,7 +114,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -114,7 +124,7 @@
             android:textSize="16dp" />
 
         <Spinner
-            android:id="@+id/spinnerSplitBill"
+            android:id="@+id/spinnerSplitAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/per_person_options" >
@@ -125,7 +135,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal">
 
         <TextView
@@ -135,7 +145,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/textPerPersonAmount"
+            android:id="@+id/textViewPersonAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_money"

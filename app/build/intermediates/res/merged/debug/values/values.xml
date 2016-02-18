@@ -282,8 +282,9 @@
     <string name="bill_amount_text">Bill Amount</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="default_money">$0.00</string>
-    <string name="default_percent">15%</string>
+    <string name="default_percent">15</string>
     <string name="per_person_text">Per Person</string>
+    <string name="percent_sign">%</string>
     <string name="percent_text">Percent</string>
     <string name="split_bill_text">Split Bill?</string>
     <string name="status_bar_notification_info_overflow">999+</string>

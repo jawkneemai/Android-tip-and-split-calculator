@@ -8,5 +8,6 @@
     <string name="split_bill_text">Split Bill?</string>
     <string name="per_person_text">Per Person</string>
     <string name="default_money">$0.00</string>
-    <string name="default_percent">15%</string>
+    <string name="default_percent">15</string>
+    <string name="percent_sign">%</string>
 </resources>
