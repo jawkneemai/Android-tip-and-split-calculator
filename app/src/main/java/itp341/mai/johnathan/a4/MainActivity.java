@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -26,10 +27,14 @@ public class MainActivity extends AppCompatActivity {
     TextView mTextViewBillTotal;
     Spinner mSpinnerSplitAmount;
     TextView mTextViewPersonAmount;
+    TextView mTextViewPersonAmountDescriptor;
 
     // Instance Variables
     double currentBillAmount = 0.0;
     double currentTipAmount = 15.0;
+    double currentPersonAmount = 0.0;
+    double currentBillIncludeTip = 0.0;
+    int splitBy = 1;
     final DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
@@ -43,8 +48,12 @@ public class MainActivity extends AppCompatActivity {
         mTextViewTipTotal = (TextView) findViewById(R.id.textViewTipTotal);
         mTextViewBillTotal = (TextView) findViewById(R.id.textViewBillTotal);
         mSpinnerSplitAmount = (Spinner) findViewById(R.id.spinnerSplitAmount);
+        mTextViewPersonAmountDescriptor = (TextView) findViewById(R.id.textviewPersonAmountDescriptor);
         mTextViewPersonAmount = (TextView) findViewById(R.id.textViewPersonAmount);
 
+        String spinnerChoices[] = getResources().getStringArray(R.array.per_person_options);
+        mTextViewPersonAmount.setVisibility(View.GONE);
+        mTextViewPersonAmountDescriptor.setVisibility(View.GONE);
 
         // Update bill amount after every time the EditText is touched
         mEditTextBillAmount.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -74,6 +83,43 @@ public class MainActivity extends AppCompatActivity {
             @Override public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
+        mSpinnerSplitAmount.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        mTextViewPersonAmount.setVisibility(View.GONE);
+                        mTextViewPersonAmountDescriptor.setVisibility(View.GONE);
+                        break;
+                    case 1:
+                        splitBy = 2;
+                        updateInfo();
+                        mTextViewPersonAmount.setVisibility(View.VISIBLE);
+                        mTextViewPersonAmountDescriptor.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        splitBy = 3;
+                        updateInfo();
+                        mTextViewPersonAmount.setVisibility(View.VISIBLE);
+                        mTextViewPersonAmountDescriptor.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        splitBy = 4;
+                        updateInfo();
+                        mTextViewPersonAmount.setVisibility(View.VISIBLE);
+                        mTextViewPersonAmountDescriptor.setVisibility(View.VISIBLE);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     @Override
@@ -100,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Function to update all areas that are update-able
     private void updateInfo() {
-        mTextViewTipTotal.setText(String.valueOf(df.format((currentTipAmount/100)*currentBillAmount)));
-        mTextViewBillTotal.setText(String.valueOf(df.format(((currentTipAmount/100)*currentBillAmount)+currentBillAmount)));
+        currentBillIncludeTip = currentBillAmount + ( currentTipAmount / 100 ) * currentBillAmount;
+        mTextViewTipTotal.setText(String.valueOf(df.format(( currentTipAmount / 100 ) * currentBillAmount )));
+        mTextViewBillTotal.setText(String.valueOf(df.format(currentBillIncludeTip)));
+        mTextViewPersonAmount.setText(String.valueOf(df.format( currentBillIncludeTip / splitBy )));
     }
 }
