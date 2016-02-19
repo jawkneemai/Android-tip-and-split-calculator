@@ -781,7 +781,8 @@ int string percent_text 0x7f06001d
 int string split_bill_text 0x7f06001e
 int string status_bar_notification_info_overflow 0x7f060013
 int string tip_text 0x7f06001f
-int string total_text 0x7f060020
+int string title 0x7f060020
+int string total_text 0x7f060021
 int style AlertDialog_AppCompat 0x7f09007f
 int style AlertDialog_AppCompat_Light 0x7f090080
 int style Animation_AppCompat_Dialog 0x7f090081

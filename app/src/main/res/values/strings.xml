@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">A4</string>
+    <string name="title">Tip and Split Calculator</string>
     <string name="action_settings">Settings</string>
     <string name="bill_amount_text">Bill Amount</string>
     <string name="percent_text">Percent</string>

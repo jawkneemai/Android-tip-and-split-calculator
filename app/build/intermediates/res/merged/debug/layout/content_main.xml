@@ -15,18 +15,40 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:orientation="horizontal">
+        android:layout_height="72dp"
+        android:gravity="center" >
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="28dp"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bill_amount_text"
-            android:textSize="16dp" />
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bill_amount_text"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/editTextBillAmount"
-            android:layout_width="50px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:layout_weight="0.33"
@@ -39,31 +61,48 @@
         android:layout_height="64dp"
         android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/percent_text"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
 
-        <TextView
-            android:id="@+id/textViewTipPercent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/default_percent"
-            android:textSize="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/percent_text"
+                android:textSize="16dp" />
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/percent_sign"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
+
+            <TextView
+                android:id="@+id/textViewTipPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_percent"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/percent_sign"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
         <SeekBar
             android:id="@+id/seekBarTipPercent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="30"
-            android:progress="15"/>
+            android:progress="15"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
@@ -72,18 +111,34 @@
         android:layout_height="64dp"
         android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tip_text"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
 
-        <TextView
-            android:id="@+id/textViewTipTotal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_text"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_money"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
+
+            <TextView
+                android:id="@+id/textViewTipTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_money"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -92,18 +147,34 @@
         android:layout_height="64dp"
         android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_text"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
 
-        <TextView
-            android:id="@+id/textViewBillTotal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_text"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_money"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
+
+            <TextView
+                android:id="@+id/textViewBillTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_money"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
     
@@ -117,19 +188,34 @@
         android:layout_height="64dp"
         android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/split_bill_text"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
 
-        <Spinner
-            android:id="@+id/spinnerSplitAmount"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/split_bill_text"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/per_person_options" >
+            android:gravity="center"
+            android:padding="16dp" >
 
-        </Spinner>
+            <Spinner
+                android:id="@+id/spinnerSplitAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/per_person_options" >
+            </Spinner>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -138,19 +224,35 @@
         android:layout_height="64dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textviewPersonAmountDescriptor"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/per_person_text"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
 
-        <TextView
-            android:id="@+id/textViewPersonAmount"
+            <TextView
+                android:id="@+id/textviewPersonAmountDescriptor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_person_text"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_money"
-            android:textSize="16dp" />
+            android:gravity="center"
+            android:padding="16dp" >
+
+            <TextView
+                android:id="@+id/textViewPersonAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_money"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

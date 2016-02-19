@@ -289,6 +289,7 @@
     <string name="split_bill_text">Split Bill?</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="tip_text">Tip</string>
+    <string name="title">Tip and Split Calculator</string>
     <string name="total_text">Total</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
